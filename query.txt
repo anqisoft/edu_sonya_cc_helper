@@ -1,0 +1,95 @@
+
+
+mutation {
+  updateUser(
+		id: 1,
+    name: "AnQi1"
+    email: "anqisoft@qq.com"
+  ) {
+    id
+    name
+    email
+  }
+}
+
+mutation {
+  deleteUser(id: 1) 
+}
+
+query {
+	users {
+    id
+    name
+    email
+	}
+}
+
+query{
+  user(id: 1) {
+    id
+    name
+    email
+  }
+}
+
+query{
+  user(id: 2) {
+    id
+    name
+    email
+  }
+}
+
+query{
+  user(id: "1") {
+    id
+    name
+    email
+  }
+}
+
+query{
+  user(id: "2") {
+    id
+    name
+    email
+  }
+}
+
+mutation {
+  addUser(
+    name: "AnQi"
+    email: "greenxmcn@gmail.com"
+  ) {
+    id
+    name
+    email
+  }
+}
+
+mutation {
+  addUser(
+    name: "sonya"
+    email: "edu.sonya.cc@qq.com"
+  ) {
+    id
+    name
+    email
+  }
+}
+
+mutation {
+  updateUser(
+		id: "1",
+    name: "AnQi1"
+    email: "anqisoft@qq.com"
+  ) {
+    id
+    name
+    email
+  }
+}
+
+mutation {
+  deleteUser(id: "1")
+}
