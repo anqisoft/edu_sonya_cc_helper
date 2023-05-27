@@ -5,6 +5,7 @@ venv
 git.log
 command.txt
 centos.log
+_removed
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
