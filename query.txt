@@ -1,61 +1,3 @@
-
-
-mutation {
-  updateUser(
-		id: 1,
-    name: "AnQi1"
-    email: "anqisoft@qq.com"
-  ) {
-    id
-    name
-    email
-  }
-}
-
-mutation {
-  deleteUser(id: 1) 
-}
-
-query {
-	users {
-    id
-    name
-    email
-	}
-}
-
-query{
-  user(id: 1) {
-    id
-    name
-    email
-  }
-}
-
-query{
-  user(id: 2) {
-    id
-    name
-    email
-  }
-}
-
-query{
-  user(id: "1") {
-    id
-    name
-    email
-  }
-}
-
-query{
-  user(id: "2") {
-    id
-    name
-    email
-  }
-}
-
 mutation {
   addUser(
     name: "AnQi"
@@ -79,8 +21,12 @@ mutation {
 }
 
 mutation {
+  deleteUser(id: 1) 
+}
+
+mutation {
   updateUser(
-		id: "1",
+		id: 1,
     name: "AnQi1"
     email: "anqisoft@qq.com"
   ) {
@@ -90,6 +36,42 @@ mutation {
   }
 }
 
-mutation {
-  deleteUser(id: "1")
+query {
+	users {
+    id
+    name
+    email
+	}
+}
+
+query{
+  user(id: 1) {
+    id
+    name
+    email
+  }
+}
+
+query{
+  user(id: "1") {
+    id
+    name
+    email
+  }
+}
+
+query{
+  user(id: 2) {
+    id
+    name
+    email
+  }
+}
+
+query{
+  user(id: "2") {
+    id
+    name
+    email
+  }
 }

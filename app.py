@@ -17,11 +17,8 @@ class Query(graphene.ObjectType):
     users = graphene.List(User)
 
     def resolve_user(self, info, id):
-        # 显示所有USERS内容
-        print('resolve_user(), USERS', USERS)
-
-        # 用lambda表达式处理，如果USERS中有指定id的用户，则返回；否则返回None
-        return next(filter(lambda x: x['id'] == id, USERS), None)
+        id_int: int = int(id)
+        return next(filter(lambda x: x['id'] == id_int, USERS), None)
 
     def resolve_users(self, info):
         return USERS
@@ -37,18 +34,17 @@ class Mutation(graphene.ObjectType):
         return user
 
     def resolve_delete_user(self, info, id):
+        id_int: int = int(id)
         for user in USERS:
-            if user['id'] == id:
+            if user['id'] == id_int:
                 USERS.remove(user)
                 return True
         return False
 
     def resolve_update_user(self, info, id, name, email):
-        # 显示所有USERS内容
-        print('resolve_update_user(), USERS', USERS)
-
+        id_int: int = int(id)
         for user in USERS:
-            if user['id'] == id:
+            if user['id'] == id_int:
                 user['name'] = name
                 user['email'] = email
                 return user
